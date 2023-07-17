@@ -7,7 +7,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -64,10 +63,11 @@ function generatePassword() {
   }
 
   // This for loop generates the password
-  for (var i = 0; i <= passwordLength; i++) {
+  for (var i = 1; i <= passwordLength; i++) {
     var randomNum = Math.floor(Math.random() * characterSet.length)
     passWord += characterSet.substring(randomNum, randomNum + 1)
   }
 
-  console.log(passWord)
+  // This return declares the output of the function, which is the password we have generated
+  return (passWord)
 }
