@@ -4,7 +4,7 @@
 This application is a random password generator that is hosted on a website and runs using JavaScript. It accepts inputs from the user to tailor the password specifically to how long they want it within parameters as well as what characters can be found within it. After all the parameters have been decided, the password then displays to the screen.
 
 ## Screenshot
-![Screenshot of password application.](/Challenge-Work/random-password-generator-challenge/random-password-generator-challenge/download.png "Screenshot of webpage")
+![Screenshot of password application.](/download.png "Screenshot of webpage")
 
 ## Link to Site
 https://gamecatcam.github.io/random-password-generator-challenge/
