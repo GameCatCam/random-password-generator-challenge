@@ -21,18 +21,35 @@ function generatePassword() {
   var charactersSpecial = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
   var passWord = ""
   var characterSet = ""
-
+  
+  //This while loop verifies that the password length falls within accepted parameter
   var passwordLength = window.prompt("Please input password length! \n\nNo less than 8 and no more than 128.")
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert("Please pick a password length within accepted parameters!")
+    var passwordLength = window.prompt("Please input password length! \n\nNo less than 8 and no more than 128.")
+    if (passwordLength >= 8 && passwordLength <= 128) {
+      break;
+    }
+  }  
 
-  // one for lowercase
-  var one = window.confirm("Would you like to include lowercase letters?")
-  // two for uppercase
-  var two = window.confirm("Would you like to include uppercase letters?")
-  // three for numbers
-  var three = window.confirm("Would you like to include numbers?")
-  // four for special characters
-  var four = window.confirm("Would you like to include special characters?")
+  // This while loop verifies that at least one character set is chosen for the password
+  while (true) {
+    // one for lowercase
+    var one = window.confirm("Would you like to include lowercase letters?")
+    // two for uppercase
+    var two = window.confirm("Would you like to include uppercase letters?")
+    // three for numbers
+    var three = window.confirm("Would you like to include numbers?")
+    // four for special characters
+    var four = window.confirm("Would you like to include special characters?")
+    if (one || two || three || four) {
+      break;
+    } else {
+      alert("Please pick at least one character set for your password!")
+    }
+  }
 
+  // These if statements concatenates the individual character sets into one master set.
   if (one) {
     characterSet = characterSet.concat(charactersLower)
   }
@@ -46,10 +63,11 @@ function generatePassword() {
     characterSet = characterSet.concat(charactersSpecial)
   }
 
+  // This for loop generates the password
   for (var i = 0; i <= passwordLength; i++) {
     var randomNum = Math.floor(Math.random() * characterSet.length)
     passWord += characterSet.substring(randomNum, randomNum + 1)
   }
-  
+
   console.log(passWord)
 }
