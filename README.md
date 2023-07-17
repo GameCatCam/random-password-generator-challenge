@@ -10,4 +10,4 @@ This application is a random password generator that is hosted on a website and 
 https://gamecatcam.github.io/random-password-generator-challenge/
 
 ## Credits
-The code presented in this project was done by me (Cameron Rawlins). Additional assistance for the code found in this was done by sites such as MDN Web Docs (https://developer.mozilla.org/en-US/) which helped look up some functions of JavaScript.
+The code presented in this project was edited by me (Cameron Rawlins). Original code was supplied by EdX for this week's challenge. Additional assistance for the code found in this was done by sites such as MDN Web Docs (https://developer.mozilla.org/en-US/) which helped look up some functions of JavaScript.
