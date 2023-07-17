@@ -20,24 +20,36 @@ function generatePassword() {
   var charactersNumber = "1234567890"
   var charactersSpecial = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
   var passWord = ""
+  var characterSet = ""
 
-  var characterSet = x
   var passwordLength = window.prompt("Please input password length! \n\nNo less than 8 and no more than 128.")
 
-  var goku = window.confirm("Would you like to include lowercase letters?")
-  var gOku = window.confirm("Would you like to include uppercase letters?")
-  var goKu = window.confirm("Would you like to include numbers?")
-  var gokU = window.confirm("Would you like to include special characters?")
+  // one for lowercase
+  var one = window.confirm("Would you like to include lowercase letters?")
+  // two for uppercase
+  var two = window.confirm("Would you like to include uppercase letters?")
+  // three for numbers
+  var three = window.confirm("Would you like to include numbers?")
+  // four for special characters
+  var four = window.confirm("Would you like to include special characters?")
 
-  if (goku == true) {
-    if (gOku == true) {
-      
-    }
+  if (one) {
+    characterSet = characterSet.concat(charactersLower)
+  }
+  if (two) {
+    characterSet = characterSet.concat(charactersUpper)
+  }
+  if (three) {
+    characterSet = characterSet.concat(charactersNumber)
+  }
+  if (four) {
+    characterSet = characterSet.concat(charactersSpecial)
   }
 
   for (var i = 0; i <= passwordLength; i++) {
-    var funnyTime = Math.floor(Math.random() * charactersLower.length)
-    passWord += charactersLower.substring(funnyTime, funnyTime + 1)
+    var randomNum = Math.floor(Math.random() * characterSet.length)
+    passWord += characterSet.substring(randomNum, randomNum + 1)
   }
   
+  console.log(passWord)
 }
